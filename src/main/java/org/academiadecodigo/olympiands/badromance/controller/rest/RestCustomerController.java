@@ -3,6 +3,8 @@ package org.academiadecodigo.olympiands.badromance.controller.rest;
 import org.academiadecodigo.olympiands.badromance.command.CustomerDto;
 import org.academiadecodigo.olympiands.badromance.converters.CustomerToDto;
 import org.academiadecodigo.olympiands.badromance.converters.DtoToCustomer;
+import org.academiadecodigo.olympiands.badromance.exceptions.AssociationExistsException;
+import org.academiadecodigo.olympiands.badromance.exceptions.CustomerNotFoundException;
 import org.academiadecodigo.olympiands.badromance.persistence.model.user.Customer;
 import org.academiadecodigo.olympiands.badromance.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,4 +83,21 @@ public class RestCustomerController {
 
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
+    public ResponseEntity<CustomerDto> deleteCustomer(@PathVariable Integer id){
+
+        try {
+            customerService.delete(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        } catch (AssociationExistsException e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        } catch (CustomerNotFoundException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 }

@@ -79,4 +79,8 @@ public class Customer extends AbstractModel {
                 ", requests=" + requests +
                 '}';
     }
+
+    public void completeRequest(Integer id) {
+        requests.get(id-1).complete();
+    }
 }

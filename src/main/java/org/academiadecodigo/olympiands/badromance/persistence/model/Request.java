@@ -5,26 +5,27 @@ import org.academiadecodigo.olympiands.badromance.persistence.model.user.Custome
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "request")
 public class Request extends AbstractModel {
 
-    private Date scheduledTime;
+    private String scheduledTime;
     private String address;
     private String targetName;
     private String genre;
     private String comments;
+    private boolean isCompleted = false;
 
     @ManyToOne
     private Customer customer;
 
-    public Date getScheduledTime() {
+    public String getScheduledTime() {
         return scheduledTime;
     }
 
-    public void setScheduledTime(Date scheduledTime) {
+    public void setScheduledTime(String scheduledTime) {
         this.scheduledTime = scheduledTime;
     }
 
@@ -68,12 +69,23 @@ public class Request extends AbstractModel {
         this.customer = customer;
     }
 
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void complete() {
+        isCompleted = true;
+    }
+
     @Override
     public String toString() {
         return "Request{" +
                 "scheduledTime=" + scheduledTime +
                 ", address='" + address + '\'' +
                 ", targetName='" + targetName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", comments='" + comments + '\'' +
+                ", isCompleted=" + isCompleted +
                 ", customer=" + customer +
                 '}';
     }

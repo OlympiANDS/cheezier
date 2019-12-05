@@ -19,4 +19,5 @@ public interface CustomerService {
     void removeRequest(Integer id, Request request);
 
 
+    void completeRequest(Integer cid, Integer id);
 }

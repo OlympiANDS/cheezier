@@ -10,7 +10,7 @@ public class RequestDto {
 
     @NotNull(message = "Date and hour required")
     @NotBlank(message = "Date and hour required")
-    private Date scheduledTime;
+    private String scheduledTime;
 
 
     @NotNull(message = "Address required")
@@ -35,11 +35,11 @@ public class RequestDto {
         this.id = id;
     }
 
-    public Date getScheduledTime() {
+    public String getScheduledTime() {
         return scheduledTime;
     }
 
-    public void setScheduledTime(Date scheduledTime) {
+    public void setScheduledTime(String scheduledTime) {
         this.scheduledTime = scheduledTime;
     }
 

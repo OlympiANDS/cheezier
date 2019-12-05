@@ -22,6 +22,8 @@ public class CustomerServicesImpl implements CustomerService {
     private CustomerDao customerDao;
     private RequestDao requestDao;
 
+
+
     @Autowired
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
@@ -88,16 +90,28 @@ public class CustomerServicesImpl implements CustomerService {
             throw new CustomerNotFoundException();
         }
 
-        if (requestDao.findById(request.getId()) == null || getRequestIds(customer).contains(request.getId())){
-            throw new RequestNotFoundException();
+        if (request.getId() == null){
+            customer.addRequest(request);
+            customerDao.saveOrUpdate(customer);
+        } else {
+            requestDao.saveOrUpdate(request);
         }
 
-        return null;
+        return customer.getRequests().get(customer.getRequests().size() - 1);
     }
 
     @Override
     public void removeRequest(Integer id, Request request) {
 
+    }
+
+    @Transactional
+    @Override
+    public void completeRequest(Integer id, Integer requestId){
+        Customer customer = customerDao.findById(id);
+
+        customer.completeRequest(requestId);
+        customerDao.saveOrUpdate(customer);
     }
 
     private Set<Integer> getRequestIds(Customer customer){
