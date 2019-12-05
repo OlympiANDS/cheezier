@@ -86,13 +86,13 @@ h1 {
 	display: block;
 }
 #hamburger .top {
-	margin-top: 18px;
+	margin-top: 30px;
 }
 .gm-style-cc {
   display: none;
 }
 #pac-input {
-  width: 70%;
+  width: 85%;
   height: 30px;
   text-align: center;
   margin: 10px 48px;
@@ -112,7 +112,7 @@ h1 {
   padding: 10px;
   margin: 1px;
   background-color: #EDC21C;
-  width: 85%; /* JOSUÉ -> PARA CENTRAR O BOTÃO */
+  width: 85vw; /* JOSUÉ -> PARA CENTRAR O BOTÃO */
   box-sizing: border-box;
   border: 1px solid #d3d3d3;
   border-radius: 2px;

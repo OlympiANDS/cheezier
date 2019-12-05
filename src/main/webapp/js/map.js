@@ -8,7 +8,7 @@ $(document).ready(function() {
     var markers = [];
     
     window.initAutocomplete = function() {
-      var iconBase = "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Ball-Chartreuse-icon.png";
+      //var iconBase = "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Ball-Chartreuse-icon.png";
       var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 41.157760, lng: -8.629205},
         zoom: 16,
@@ -31,9 +31,9 @@ $(document).ready(function() {
             map: map,
             position: pos,
             visible: true,
-            icon: iconBase,
           });
           markers.push(marker);
+          console.log(marker.position.toString());
           google.maps.event.addListener(infoWindow, 'domready', function () {
             $('.gm-style-iw').parent().addClass('custom-iw');
             $('.custom-iw').children(':nth-child(3)').css({
@@ -116,7 +116,8 @@ $(document).ready(function() {
         infoWindow.setPosition(newPos);
         infoWindow.setContent(content); 
         marker.setPosition(newPos);
-        marker.setIcon(iconBase);
+        //marker.setIcon(iconBase);
+        console.log(marker.position.toString());
       });
     }
       
