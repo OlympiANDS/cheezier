@@ -1,10 +1,11 @@
+console.log("cheguei aqui");
 $(document).ready(function start() {
   // Google API addition, mostly copied from the google pages
   // Note: This example requires that you consent to location sharing when
   // prompted by your browser. If you see the error "The Geolocation service
   // failed.", it means you probably did not give permission for the browser to
   // locate you.
-
+console.log("aqui tb");
   var markers = [];
 
   window.initAutocomplete = function () {

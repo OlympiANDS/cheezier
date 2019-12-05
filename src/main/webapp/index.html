@@ -67,9 +67,15 @@
         -->
         </div>
     </div>
-    <script type="module" src="js/map.js"></script>
+    <script src="js/plugins.js"></script>
+
+        <script
+            data-main="js/app/main"
+            src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"
+        ></script>
+    <!--<script type="text/javascript" src="js/map.js"></script>-->
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq0kOMBsU_lnCivvUxZNHu_I4bkI0U1zY&libraries=places&callback=initAutocomplete&region=PT&language=en&libraries=geometry,places"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq0kOMBsU_lnCivvUxZNHu_I4bkI0U1zY&callback=initAutocomplete&region=PT&libraries=geometry,places"
         async></script>
 </body>
 
