@@ -27,9 +27,9 @@
                 <li>Free Rides</li>
                 <li>Promotions</li>
                 <li>Notifications</li>
-                <li>Settings</li>
                 -->
-                <li>About</li>
+                <li id="mapButton">Map</li>
+                <li id="aboutButton">About</li>
             </ul>
         </nav>
         <div class="container">
@@ -47,7 +47,7 @@
             </div>
             <div class="model">
                 <ul>
-                    <a href="#">
+                    <a id="requestButton" href="#">
                         <li>CHEEZIE REQUEST</li>
                     </a>
                 <!--
@@ -67,7 +67,7 @@
         -->
         </div>
     </div>
-    <script type="text/javascript" src="js/map.js"></script>
+    <script type="module" src="js/map.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq0kOMBsU_lnCivvUxZNHu_I4bkI0U1zY&libraries=places&callback=initAutocomplete&region=PT&language=en&libraries=geometry,places"
         async></script>
