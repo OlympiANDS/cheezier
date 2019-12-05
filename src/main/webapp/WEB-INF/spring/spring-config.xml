@@ -5,7 +5,7 @@
 
     <!-- load .properties file -->
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-        <property name="locations" value="classpath:badromance.properties"/>
+        <property targetName="locations" value="classpath:badromance.properties"/>
     </bean>
 
     <!-- spring servlet will handle all requests, including static -->
@@ -17,11 +17,11 @@
     <!-- spring will check for components from this package -->
     <context:component-scan base-package="org.academiadecodigo.olympiands.badromance"/>
 
-    <!-- default name is transaction manager -->
+    <!-- default targetName is transaction manager -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="emFactory"/>
+        <property targetName="entityManagerFactory" ref="emFactory"/>
     </bean>
 
     <import resource="./persistence/h2.xml"/>

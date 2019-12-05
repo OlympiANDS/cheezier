@@ -1,4 +1,7 @@
-package org.academiadecodigo.olympiands.badromance.persistence;
+package org.academiadecodigo.olympiands.badromance.persistence.model.user;
+
+import org.academiadecodigo.olympiands.badromance.persistence.model.AbstractModel;
+import org.academiadecodigo.olympiands.badromance.persistence.model.Request;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -6,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name="customer")
-public class Customer extends AbstractModel{
+public class Customer extends AbstractModel {
 
     private String firstName;
     private String lastName;

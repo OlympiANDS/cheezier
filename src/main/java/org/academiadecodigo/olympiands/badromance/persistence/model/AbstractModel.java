@@ -1,4 +1,4 @@
-package org.academiadecodigo.olympiands.badromance.persistence;
+package org.academiadecodigo.olympiands.badromance.persistence.model;
 
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -25,7 +25,7 @@ public abstract class AbstractModel implements Model {
     private Date updateTime;
 
     @Override
-    public Integer getID() {
+    public Integer getId() {
         return id;
     }
 
