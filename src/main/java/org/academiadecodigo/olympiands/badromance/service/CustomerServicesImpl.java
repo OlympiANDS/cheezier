@@ -80,7 +80,7 @@ public class CustomerServicesImpl implements CustomerService {
 
     @Transactional
     @Override
-    public Request addRequest(Integer id, Request request) throws CustomerNotFoundException {
+    public Request addRequest(Integer id, Request request) throws CustomerNotFoundException, RequestNotFoundException {
 
         Customer customer = customerDao.findById(id);
 
