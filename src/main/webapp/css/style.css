@@ -1,8 +1,9 @@
 /* css file for uber project */
 body {
-	width: 320px;
-	height: 0px;
-	font-family: 'Lato', sans-serif;
+	width: 100%;
+	height: 100%;
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
 }
 a {
   text-decoration: none;
@@ -46,7 +47,7 @@ h2 {
   content:'';
   display: block;
   position: fixed;
-  width: 320px;
+  width: 100%;
   height: 100%;
   z-index: 99;
   background-color: rgba(0, 0, 0, .3);
@@ -55,10 +56,13 @@ h2 {
 }
 .container {
   -webkit-transition: all 500ms;
-	transition: all 500ms;
+  transition: all 500ms;
+  width: 100%;
+  height: 0%;
 }
 header {
-	background-color: #d3d3d3;
+  background-color: #EDC21C;
+  color: #364C5D;
 }
 h1 {
 	text-align: center;
@@ -77,8 +81,8 @@ h1 {
 	margin: 3px;
 	margin-left: 20px;
 	background-color: black;
-	width: 18px;
-	height: 2px;
+	width: 36px;
+	height: 4px;
 	display: block;
 }
 #hamburger .top {
@@ -94,8 +98,8 @@ h1 {
   margin: 10px 48px;
 }
 #map {
-	width: 320px;
-	height: 400px;
+	width: 100%;
+	height: 500px;
 }
 .model {
   margin: 7px 1px;
@@ -107,8 +111,8 @@ h1 {
   text-align: center;
   padding: 10px;
   margin: 1px;
-  background-color: #e8e8e8;
-  width: 32%;
+  background-color: #EDC21C;
+  width: 85%; /* JOSUÉ -> PARA CENTRAR O BOTÃO */
   box-sizing: border-box;
   border: 1px solid #d3d3d3;
   border-radius: 2px;

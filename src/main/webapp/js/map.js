@@ -5,15 +5,16 @@ $(document).ready(function() {
     // failed.", it means you probably did not give permission for the browser to
     // locate you.
     
+    var markers = [];
     
     window.initAutocomplete = function() {
       var iconBase = "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/32/Map-Marker-Ball-Chartreuse-icon.png";
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: 41.157760, lng: -8.629205},
         zoom: 16,
         disableDefaultUI: true,
       });
-      var content = '<div class="time"><p>5</p><p>min</p></div><p>Set Pickup Location</p><a href="#"><span class="go">></span></a>';
+      var content = '<div class="time"><p>5</p><p>min</p></div><p>Set Cheezie Location</p><a href="#"><span class="go">></span></a>';
       var infoWindow = new google.maps.InfoWindow({
         map: map,
         content: content
@@ -32,6 +33,7 @@ $(document).ready(function() {
             visible: true,
             icon: iconBase,
           });
+          markers.push(marker);
           google.maps.event.addListener(infoWindow, 'domready', function () {
             $('.gm-style-iw').parent().addClass('custom-iw');
             $('.custom-iw').children(':nth-child(3)').css({
@@ -45,8 +47,8 @@ $(document).ready(function() {
           handleLocationError(true, infoWindow, map.getCenter());
         });
       } else {
+
         // Browser doesn't support Geolocation
-        
         handleLocationError(false, infoWindow, map.getCenter());
       }
     
@@ -66,7 +68,7 @@ $(document).ready(function() {
       map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
       });
-      var markers = [];
+      markers = [];
       // Listen for the event fired when the user selects a prediction and retrieve
       // more details for that place.
       searchBox.addListener('places_changed', function() {
@@ -103,6 +105,7 @@ $(document).ready(function() {
       var marker = new google.maps.Marker ({
         map: map
       });
+      markers.push(marker);
       google.maps.event.addListener(infoWindow, 'domready', function () {
           $('.gm-style-iw').parent().addClass('custom-iw');
           $('.custom-iw').children(':nth-child(3)').css({

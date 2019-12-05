@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>BAD ROMANCE</title>
+    <title>Cheezier App</title>
 
     <!-- internal CSS link -->
     <link href='./css/style.css' rel='stylesheet' type='text/css'>
@@ -12,20 +12,23 @@
     <!-- external CSS link -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 </head>
 
 <body>
     <div class="menu-container">
         <nav class="nav-menu">
-            <h2>BAD ROMANCE</h2>
+            <h2>Cheezier App</h2>
             <ul>
-                <li>Payment</li>
+                <!--<li>Payment</li>
                 <li>History</li>
                 <li>Help</li>
                 <li>Free Rides</li>
                 <li>Promotions</li>
                 <li>Notifications</li>
                 <li>Settings</li>
+                -->
                 <li>About</li>
             </ul>
         </nav>
@@ -37,9 +40,9 @@
                     <span class="hamburger-menu"></span>
                     <span class="hamburger-menu"></span>
                 </div>
-                <h1>BAD ROMANCE</h1>
+                <h1>Cheezier</h1>
             </header>
-            <input id="pac-input" class="controls" type="text" placeholder="Pickup Location">
+            <input id="pac-input" class="controls" type="text" placeholder="Cheezier Location">
             <div id="map">
             </div>
             <div class="model">
@@ -51,19 +54,22 @@
                     <a href="#">
                         <li>SUV</li>
                     </a>
+                    
                     <a href="#">
                         <li>VIP</li>
                     </a>
                 -->
                 </ul>
             </div>
+        <!--
             <div class="ride">
             </div>
+        -->
         </div>
     </div>
     <script type="text/javascript" src="js/map.js"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq0kOMBsU_lnCivvUxZNHu_I4bkI0U1zY&libraries=places&callback=initAutocomplete"
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCq0kOMBsU_lnCivvUxZNHu_I4bkI0U1zY&libraries=places&callback=initAutocomplete&region=PT&language=en&libraries=geometry,places"
         async></script>
 </body>
 
