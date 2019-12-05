@@ -1,0 +1,213 @@
+/* css file for uber project */
+body {
+	width: 320px;
+	height: 0px;
+	font-family: 'Lato', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  }
+.nav-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 200px;
+	height: 100%;
+	background: black;
+	color: #e3e3e3;
+	-webkit-transition: all 500ms;
+	transition: all 500ms;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+.nav-menu::after {
+	display: none;
+}
+.nav-menu-open .nav-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+h2 {
+  font-size: 1em;
+  padding: 30px;
+}
+.nav-menu li {
+  text-transform: uppercase;
+  padding: 20px;
+}
+.overlay::before {
+  content:'';
+  display: block;
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, .3);
+  -webkit-transition: all 1000ms;
+	transition: all 1000ms;
+}
+.container {
+  -webkit-transition: all 500ms;
+	transition: all 500ms;
+}
+header {
+	background-color: #d3d3d3;
+}
+h1 {
+	text-align: center;
+	padding: 18px;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+} 
+
+#hamburger {
+	width: 45px;
+	height: 100%;
+	float: left;
+} 
+#hamburger span {
+	padding: 0px;
+	margin: 3px;
+	margin-left: 20px;
+	background-color: black;
+	width: 18px;
+	height: 2px;
+	display: block;
+}
+#hamburger .top {
+	margin-top: 18px;
+}
+.gm-style-cc {
+  display: none;
+}
+#pac-input {
+  width: 70%;
+  height: 30px;
+  text-align: center;
+  margin: 10px 48px;
+}
+#map {
+	width: 320px;
+	height: 400px;
+}
+.model {
+  margin: 7px 1px;
+  width: 320px;
+}
+.model ul li {
+  display: inline-block;
+  font-size: .8em;
+  text-align: center;
+  padding: 10px;
+  margin: 1px;
+  background-color: #e8e8e8;
+  width: 32%;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+.model a {
+  color: #535359;
+}
+/* Infowindow */
+.time {
+  display: inline-block;
+  width: 20px;
+  float: left;
+  padding: 2px;
+  font-size: 12px;
+  border: 1px solid white !important;
+  border-radius: 50px;
+  margin-right: -23px;
+  margin-left:2px;
+  margin-top: -5px;
+}
+.time p:nth-child(2) {
+  font-size: 6px;
+}
+.go {
+  float: right;
+  border: 1px solid white !important;
+  border-radius: 50px;
+  padding: 4px 7px 4px 7px;
+  font-size: 13px;
+  margin-top: -17px;
+  margin-right: 2px;
+}
+a .go {
+  color: white !important;
+}
+.time:after {
+  position: absolute;
+  bottom: 0;  
+  height: 100%;
+  margin-left: -22px;
+  width: 120%;
+  content: "";
+  background: linear-gradient(to top,
+     rgba(0, 0, 0, .5) 20%, 
+     rgba(255,255,255, .2) 80%
+  );
+  pointer-events: none; /* so the text is still selectable */
+}
+
+/* css snagged from http://jsfiddle.net/doktormolle/k57qojq7/ to get me started for styling the infowindow */
+.custom-iw .gm-style-iw {
+  text-align: center;
+  top: 14px !important;
+	left: -22px !important;
+}
+
+.gm-style-iw>div>div {
+  overflow: visible !important;
+}
+.gm-style-iw>div {
+  overflow: visible !important;
+}
+.custom-iw .gm-style-iw, .custom-iw .gm-style-iw>div, .custom-iw .gm-style-iw>div>div {
+  width:250px !important;
+  max-width:100% !important;
+}
+      /** set here the width **/
+.custom-iw, .custom-iw>div:first-child>div:last-child {
+  width: 200px !important;
+  height: 0px !important;
+  margin-left: 52px;
+  margin-top:-20px;
+}
+/** set here the desired background-color **/
+.custom-iw .gm-style-iw, .custom-iw .gm-style-iw>div, .custom-iw .gm-style-iw>div>div {
+  background-color: black !important;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.custom-iw>div>div:nth-Child(2) {
+  visibility: hidden;
+}
+.custom-iw>div>div:nth-Child(4) {
+  visibility: hidden;
+}
+.custom-iw>div>div:nth-Child(3) {
+  margin-left: -52px;
+  margin-top: -10px;
+}
+.custom-iw>div:nth-Child(2) {
+  height: 25px !important;
+  border-radius: 25px;
+}
+/* This gets rid of the shadow of the triangle under the infowindow */
+.gm-style>div>div>div>div>div>div:first-child {
+  border: 0px !important;
+}
+/* Little triangle pieces under the main infowindow */
+.custom-iw>div>div>div:nth-child(2)>div, .custom-iw>div>div>div:nth-child(1)>div {
+  background-color: black !important;
+}
