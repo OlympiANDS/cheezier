@@ -2,6 +2,7 @@ package org.academiadecodigo.olympiands.badromance.persistence.dao.jpa;
 
 import org.academiadecodigo.olympiands.badromance.persistence.dao.Dao;
 import org.academiadecodigo.olympiands.badromance.persistence.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

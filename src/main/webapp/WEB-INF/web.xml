@@ -4,7 +4,7 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>TODO API</display-name>
+    <display-name>CHEEZIER API</display-name>
 
     <!-- remember springmvc front controller-->
     <servlet>
