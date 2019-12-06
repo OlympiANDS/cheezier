@@ -129,7 +129,7 @@
   }
 
   function errorCallback(request, status, error) {
-    alert('Burniiiiiiing');
+    alert('An error as ocurred. Try Again or contact us!');
   }
 
   // perform an ajax http get request
@@ -149,8 +149,6 @@
   });
 
   $('#addBtn').click(function (event) {
-    alert("add BITCHES");
-
     $.ajax({
       url: 'http://localhost:8080/cheezier/api/customer/',
       type: 'POST',

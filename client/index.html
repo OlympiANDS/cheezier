@@ -23,6 +23,16 @@
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          console.log("ready!");
+      });
+
+      $(window).on("load", function () {
+          console.log("window loaded");
+      });
+  </script>
 </head>
 
 <body id="page-top">
@@ -77,28 +87,61 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Register Section -->
   <section class="page-section" id="services">
+    
     <form>
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="password" class="form-control" id="firstName" placeholder="First Name">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name">
       </div>
       <div class="form-group">
         <label for="LastName">Last Name</label>
-        <input type="password" class="form-control" id="lastName" placeholder="Last Name">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
       </div>
       <div class="form-group">
         <label for="InputEmail">E-mail</label>
-        <input type="email" class="form-control" id="exampleInputEmail1"placeholder="Enter email" >
+        <input type="email" class="form-control" id="email"placeholder="Enter email" >
       </div>
       <div class="form-group">
+          <label for="InputPhone">Phone</label>
+          <input type="text" class="form-control" id="phone"placeholder="Enter phone number" >
+        </div>
+       <!-- 
+      <div class="form-group">
         <label for="InputPassword">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <small id="notice" class="form-text text-muted">We'll never share this informations with anyone else.</small>
-      <button type="submit" class="btn btn-warning">Submit</button>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div-->
+      <small id="notice" class="form-text text-muted">We won't share your informations with anyone, pinky promise.</small>
+      <button id ="submit"style="margin-top: 5%;" type="submit" class="btn btn-warning">Submit</button>
     </form>
+
+    <script>
+    $('#submit').click(function (event) {
+
+console.log("Entrou?");
+   $.ajax({    
+     url: 'http://localhost:8080/cheezier/api/customer/',
+     type: 'POST',
+     data: JSON.stringify({
+       firstName: $('#firstName').val(),
+       lastName: $('#lastName').val(),
+       email: $('#email').val(),
+       phone: $('#phone').val()
+     }),
+     async: true,
+     contentType: 'application/json',
+     success: function () {
+      console.log("Aqui?");
+
+       alert("Customer added with success!");
+     },
+     error: function (error) {
+       alert("Something went wrong!")
+     }
+   });
+ });
+    </script>
   </section>
 
   <!-- Portfolio Section -->
@@ -195,6 +238,12 @@
           <h2 class="mt-0">Let's Get In Touch!</h2>
           <hr class="divider my-4">
           <p class="text-muted mb-5">Are you a musician looking for a small change? Contact us!</p>
+        
+          <p class="text-muted mb-5">Or register right now to amaze with your performing!</p>
+          <br>
+          <a href="customer.html">
+            <input style="margin-bottom: 5%;" type="button" id="login-button" class="btn btn-warning" value="Register" />
+         </a>
         </div>
       </div>
       <div class="row">
