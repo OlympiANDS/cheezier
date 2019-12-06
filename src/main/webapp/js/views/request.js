@@ -23,7 +23,7 @@ function render(position) {
     <input type="date" id="date" placeholder="Enter date" name="date">
     <br/>
     <label for="name">Hour:</label>
-    <input type="time" id="time" placeholder="Time of surprise" name="name">
+    <input type="time" id="time" placeholder="Time of surprise" name="time">
     <br/>
     <label for="name">Name:</label>
     <input type="name" id="name" placeholder="Surprise recipient name" name="name">
@@ -46,11 +46,12 @@ function render(position) {
 }
 
 function request() {
+    console.log($('#time').val());
     $.ajax({
-        url: 'http://192.168.1.123:8080/cheezier/api/customer/' + '1', // CHANGE FOR ID
+        url: 'http://localhost:8080/cheezier/api/customer/' + '1'+'/request', // CHANGE FOR ID
         type: 'POST',
         data: JSON.stringify({
-            scheduledTime: $('#date').val() + ' ' + $('time').val(),
+            scheduledTime: $('#date').val() + ' ' + $('#time').val(),
             address: $('#position').val(),
             targetName: $('#name').val(),
             genre: $('#genre').val(),
