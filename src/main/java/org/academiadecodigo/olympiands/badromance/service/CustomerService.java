@@ -11,6 +11,7 @@ import java.util.List;
 public interface CustomerService {
 
     Customer get(Integer id);
+    Customer get(String email);
     Customer save(Customer customer);
     void delete(Integer id) throws CustomerNotFoundException, AssociationExistsException;
     List<Customer> list();

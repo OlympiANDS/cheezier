@@ -39,6 +39,10 @@ public class CustomerServicesImpl implements CustomerService {
         return customerDao.findById(id);
     }
 
+    public Customer get(String email){
+        return customerDao.findByEmail(email);
+    }
+
     @Transactional
     @Override
     public Customer save(Customer customer) {

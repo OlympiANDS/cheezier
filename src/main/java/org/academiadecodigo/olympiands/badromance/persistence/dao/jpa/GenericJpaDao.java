@@ -15,7 +15,7 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
     private Class<T> modelType;
 
     @PersistenceContext
-    private EntityManager em;
+    EntityManager em;
 
 
     public GenericJpaDao(Class<T> modelType){
@@ -32,6 +32,7 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
         Root<T> root = criteriaQuery.from(modelType);
         return em.createQuery(criteriaQuery).getResultList();
     }
+
 
     @Override
     public T findById(Integer id) {

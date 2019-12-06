@@ -34,7 +34,6 @@ public class RestCustomerController {
         this.customerService = customerService;
     }
 
-
     @Autowired
     public void setCustomerToDto(CustomerToDto customerToDto) {
         this.customerToDto = customerToDto;
@@ -45,6 +44,17 @@ public class RestCustomerController {
         this.dtoToCustomer = dtoToCustomer;
     }
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/login"})
+    public ResponseEntity<CustomerDto> getCustomerByEmail(String email){
+        Customer customer = customerService.get(email);
+
+        if (customer == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(customerToDto.convert(customer), HttpStatus.OK);
+
+    }
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<CustomerDto>> listCustomers(){
         List<CustomerDto> customerDtos = new ArrayList<>();
