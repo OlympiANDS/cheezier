@@ -13,6 +13,7 @@ public class Performer extends AbstractModel {
     private String email;
     private String phone;
 
+
     public String getName() {
         return name;
     }
