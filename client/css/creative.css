@@ -9283,7 +9283,6 @@ button.bg-dark:focus {
   text-align: center !important;
   color: #EDC21C;
 }
-
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;
