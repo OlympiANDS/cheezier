@@ -1379,6 +1379,8 @@ pre code {
   padding: 0.75rem;
   vertical-align: top;
   border-top: 1px solid #dee2e6;
+  color:white;
+  background-color: black;
 }
 
 .table thead th {

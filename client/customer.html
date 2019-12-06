@@ -15,13 +15,16 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic'
+    rel='stylesheet' type='text/css'>
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="css/creative.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 </head>
 
@@ -31,7 +34,9 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="index.html">Home</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -47,27 +52,190 @@
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
           <hr class="divider my-4">
-      </div>    
-  </header>
-   
+        </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; Hackhathon {OportoUNITY} && {FUNdão} @ 2019</div>
-    </div>
-  </footer>
+        <div>
+          <div class="row">
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <form id="customerForm">
+                <table class="table">
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                  <tr>
+                    <input id="idIn" type="number" class="form-control" hidden="hidden" />
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+                    <td>
+                      <input id="firstNameIn" type="text" class="form-control" placeholder="Name" />
+                    </td>
+                    <td>
+                      <input id="lastNameIn" type="text" class="form-control" placeholder="Last Name" />
+                    </td>
+                    <td>
+                      <input id="emailIn" type="text" class="form-control" placeholder="Email" />
+                    </td>
+                    <td>
+                      <input id="phoneIn" type="text" class="form-control" placeholder="Phone" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" ali>
+                      <button id="updateBtn" type="button" class="btn btn-warning">Update</button>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </div>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
+          </div>
+        </div>
+        <br />
+        <!-- List of Users -->
+        <div class="row">
+          <div class="col-12">
+            <table class="table" id="customers-table">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Edit</th>
+              </tr>
+              <a href="request.html">
+                <input type="button" id="login-button" class="btn btn-warning" value="Send a Telegram!" />
+             </a>
+            </table>
+          </div>
+
+        </div>
+      </div>
+</body>
+
+<script>
+  function successCallback(customersJson) {
+
+    var customersTable = $("#customers-table");
+
+    customersJson.forEach(customer => {
+      $('#customers-table').append('<tr>'
+        + '<td>' + customer.firstName + '</td>'
+        + '<td>' + customer.lastName + '</td>'
+        + '<td>' + customer.email + '</td>'
+        + '<td>' + customer.phone + '</td>'
+        + '<td><button id="editBtn" value="' + customer.id + '" onclick="editCustomer(this.value)" type="button" class="btn btn-warning">edit</button></td>'
+        + '</tr>');
+    });
+
+  }
+
+  function errorCallback(request, status, error) {
+    alert('Burniiiiiiing');
+  }
+
+  // perform an ajax http get request
+  $.ajax({
+    url: 'http://localhost:8080/cheezier/api/customer',
+    async: true,
+    success: successCallback,
+    error: errorCallback
+  });
+
+</script>
+
+
+<script>
+  $('#resetBtn').click(function (event) {
+    $('#customerForm')[0].reset();
+  });
+
+  $('#addBtn').click(function (event) {
+    alert("add BITCHES");
+
+    $.ajax({
+      url: 'http://localhost:8080/cheezier/api/customer/',
+      type: 'POST',
+      data: JSON.stringify({
+        firstName: $('#firstNameIn').val(),
+        lastName: $('#lastNameIn').val(),
+        email: $('#emailIn').val(),
+        phone: $('#phoneIn').val()
+      }),
+      async: true,
+      contentType: 'application/json',
+      success: function () {
+        alert("Customer added with success!")
+        window.location.href = "/Users/pedro/Desktop/cheezier/client/customer.html";
+      },
+      error: function (error) {
+        alert("Something went wrong!")
+      }
+    });
+  });
+
+  var editCustomer = function (id) {
+
+    $.ajax({
+      url: 'http://localhost:8080/cheezier/api/customer/' + id,
+      async: true,
+      success: function (customer) {
+        $('#idIn').val(customer.id);
+        $('#firstNameIn').val(customer.firstName);
+        $('#lastNameIn').val(customer.lastName);
+        $('#emailIn').val(customer.email);
+        $('#phoneIn').val(customer.phone);
+      },
+      error: function () {
+        alert("Something went wrong");
+      }
+    });
+  }
+
+  $('#updateBtn').click(function (event) {
+
+    var id = $('#idIn').val();
+
+    $.ajax({
+      url: 'http://localhost:8080/cheezier/api/customer/' + id,
+      type: 'PUT',
+      data: JSON.stringify({
+        firstName: $('#firstNameIn').val(),
+        lastName: $('#lastNameIn').val(),
+        email: $('#emailIn').val(),
+        phone: $('#phoneIn').val()
+      }),
+      async: true,
+      contentType: 'application/json',
+      success: function () {
+        alert("Customer updated with success!")
+        window.location.href = "/Users/pedro/Desktop/cheezier/client/customer.html";
+      },
+      error: function (error) {
+        alert("Something went wrong!")
+      }
+    });
+  });
+
+</script>
+</header>
+
+
+<!-- Footer -->
+<footer class="bg-dark py-5">
+  <div class="container">
+    <div class="small text-center text-muted">Copyright &copy; Hackhathon {OportoUNITY} && {FUNdão} @ 2019</div>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/creative.min.js"></script>
 
 </body>
 
