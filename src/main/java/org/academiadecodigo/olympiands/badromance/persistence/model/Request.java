@@ -16,6 +16,7 @@ public class Request extends AbstractModel {
     private String targetName;
     private String genre;
     private String comments;
+    private boolean isTaken = false;
     private boolean isCompleted = false;
 
     @ManyToOne
@@ -75,6 +76,14 @@ public class Request extends AbstractModel {
 
     public void complete() {
         isCompleted = true;
+    }
+
+    public boolean isTaken(){
+        return isTaken;
+    }
+
+    public void take(){
+        isTaken = true;
     }
 
     @Override
