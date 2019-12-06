@@ -28,6 +28,7 @@ function render(position) {
     <label for="name">Name:</label>
     <input type="name" id="name" placeholder="Surprise recipient name" name="name">
     <br/>
+    <label for="name">Genre:</label>
     <select name="genre" id="genre">
   <option value="starwars">Star Wars</option>
   <option value="lordoftherings">Lord of the Rings</option>

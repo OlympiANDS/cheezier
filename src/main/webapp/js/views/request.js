@@ -48,7 +48,7 @@ function render(position) {
 function request() {
     console.log($('#time').val());
     $.ajax({
-        url: 'http://localhost:8080/cheezier/api/customer/' + '1'+'/request', // CHANGE FOR ID
+        url: 'http://localhost:8080/cheezier/api/customer/' + '1' +'/request', // CHANGE FOR ID
         type: 'POST',
         data: JSON.stringify({
             scheduledTime: $('#date').val() + ' ' + $('#time').val(),
