@@ -112,7 +112,7 @@ public class RestRequestController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        if (requestDto.getId() != null && requestDto.getId() != id){
+        if (requestDto.getId() != null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 

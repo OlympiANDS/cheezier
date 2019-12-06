@@ -84,6 +84,28 @@ public class RestCustomerController {
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
+    @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
+    public ResponseEntity<CustomerDto> editCustomer(@Valid @RequestBody CustomerDto customerDto, BindingResult bindingResult, @PathVariable Integer id){
+
+        if (bindingResult.hasErrors()){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        if (customerDto.getId() != null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        if (customerService.get(id) == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        customerDto.setId(id);
+
+        customerService.save(dtoToCustomer.convert(customerDto));
+        return new ResponseEntity<>(HttpStatus.OK);
+
+    }
+
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<CustomerDto> deleteCustomer(@PathVariable Integer id){
 

@@ -23,8 +23,8 @@ public class DtoToRequest implements Converter<RequestDto, Request> {
 
         Request request = (requestDto.getId()) != null ? requestService.get(requestDto.getId()) : new Request();
 
-        request.setAddress(requestDto.getAddress());
         request.setComments(requestDto.getComments());
+        request.setAddress(requestDto.getAddress());
         request.setGenre(requestDto.getGenre());
         request.setScheduledTime(requestDto.getScheduledTime());
         request.setTargetName(requestDto.getTargetName());
