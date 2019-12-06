@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Customer Page</title>
+  <title>Performer Page</title>
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -66,16 +66,13 @@
                     <input id="idIn" type="number" class="form-control" hidden="hidden" />
 
                     <td>
-                      <input id="firstNameIn" type="text" class="form-control" placeholder="Name" />
+                      <input id="name" type="text" class="form-control" placeholder="Name" />
                     </td>
                     <td>
-                      <input id="lastNameIn" type="text" class="form-control" placeholder="Last Name" />
+                      <input id="email" type="text" class="form-control" placeholder="Email" />
                     </td>
                     <td>
-                      <input id="emailIn" type="text" class="form-control" placeholder="Email" />
-                    </td>
-                    <td>
-                      <input id="phoneIn" type="text" class="form-control" placeholder="Phone" />
+                      <input id="phone" type="text" class="form-control" placeholder="Phone" />
                     </td>
                   </tr>
                   <tr>
@@ -95,15 +92,14 @@
           <div class="col-12">
             <table class="table" id="customers-table">
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Edit</th>
               </tr>
               <a href="request.html">
-                <input type="button" id="login-button" class="btn btn-warning" value="Send a Cheezy!" />
-             </a>
+                <input type="button" id="login-button" class="btn btn-warning" value="Requests" />
+              </a>
             </table>
           </div>
 
@@ -118,11 +114,10 @@
 
     customersJson.forEach(customer => {
       $('#customers-table').append('<tr>'
-        + '<td>' + customer.firstName + '</td>'
-        + '<td>' + customer.lastName + '</td>'
-        + '<td>' + customer.email + '</td>'
-        + '<td>' + customer.phone + '</td>'
-        + '<td><button id="editBtn" value="' + customer.id + '" onclick="editCustomer(this.value)" type="button" class="btn btn-warning">edit</button></td>'
+        + '<td>' + performer.firstName + '</td>'
+        + '<td>' + performer.email + '</td>'
+        + '<td>' + performer.phone + '</td>'
+        + '<td><button id="editBtn" value="' + performer.id + '" onclick="editCustomer(this.value)" type="button" class="btn btn-warning">edit</button></td>'
         + '</tr>');
     });
 
@@ -142,29 +137,26 @@
 
 </script>
 
-
 <script>
   $('#resetBtn').click(function (event) {
     $('#customerForm')[0].reset();
   });
 
   $('#addBtn').click(function (event) {
-    alert("add BITCHES");
 
     $.ajax({
-      url: 'http://localhost:8080/cheezier/api/customer/',
+      url: 'http://localhost:8080/cheezier/api/performer/',
       type: 'POST',
       data: JSON.stringify({
-        firstName: $('#firstNameIn').val(),
-        lastName: $('#lastNameIn').val(),
-        email: $('#emailIn').val(),
-        phone: $('#phoneIn').val()
+        firstName: $('#name').val(),
+        email: $('#email').val(),
+        phone: $('#phone').val()
       }),
       async: true,
       contentType: 'application/json',
       success: function () {
         alert("Customer added with success!")
-        window.location.href = "/Users/pedro/Desktop/cheezier/client/customer.html";
+        window.location.href = "/Users/pedro/Desktop/cheezier/client/performer.html";
       },
       error: function (error) {
         alert("Something went wrong!")
@@ -175,7 +167,7 @@
   var editCustomer = function (id) {
 
     $.ajax({
-      url: 'http://localhost:8080/cheezier/api/customer/' + id,
+      url: 'http://localhost:8080/cheezier/api/performer/' + id,
       async: true,
       success: function (customer) {
         $('#idIn').val(customer.id);
