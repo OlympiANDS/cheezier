@@ -78,6 +78,7 @@ h2 {
 .nav-menu li {
   text-transform: uppercase;
   padding: 20px;
+  color: white;
 }
 .overlay::before {
   content:'';

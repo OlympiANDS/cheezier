@@ -61,6 +61,7 @@ function request() {
         contentType: 'application/json',
         success: function () {
 
+            alert("Cheezier sent!");
             console.log("Request successful!");
 
             document.location.href = '/app.html';
