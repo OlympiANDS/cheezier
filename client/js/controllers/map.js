@@ -14,6 +14,8 @@ window.initAutocomplete = function () {
 
   var requestButton = $('#requestButton');
 
+  requestButton.text('CHEEZY REQUEST');
+
   requestButton.click(function() {
     console.log(markers[0].position.toString());
     window.location.hash = 'request'
@@ -159,8 +161,6 @@ $('body').on('click', function (e) {
     $('.container').removeClass('overlay');
   }
 });
-
-//import service from '../services/marvel.js';
 
 export default {
   async start() {
