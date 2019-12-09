@@ -8826,6 +8826,9 @@ button.bg-dark:focus {
   .mx-lg-n2 {
     margin-left: -0.5rem !important;
   }
+  .navbar {
+    display: none;
+  }
   .m-lg-n3 {
     margin: -1rem !important;
   }
@@ -9526,9 +9529,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
   .container {
     min-width: 992px !important;
-  }
-  .navbar {
-    display: none;
   }
   .badge {
     border: 1px solid #000;
