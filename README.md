@@ -47,7 +47,7 @@ Clone this project and run the command `$ mvn tomcat7:deploy` on the project's f
 Tomcat should be configured for `localhost:8080` - if not, please update project files.
 
 ## Run the client side
-Open the http://localhost:8080/safeplace on your browser. (Firefox or Chrome recommended)
+Open the http://localhost:8080/cheezier on your browser. (Firefox or Chrome recommended)
 
 ## Authors
 - [Sara Correia](https://github.com/saracorreia07)
