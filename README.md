@@ -50,8 +50,8 @@ Tomcat should be configured for `localhost:8080` - if not, please update project
 Open the http://localhost:8080/safeplace on your browser. (Firefox or Chrome recommended)
 
 ## Authors
-- [Edma Augusto](https://github.com/AEdma)
-- [Fernando Abreu](https://github.com/fernnandio)
-- [Miguel Pereira](https://github.com/MikeFuckingP)
-- [Rafael Miranda](https://github.com/rafaeltmiranda)
-- [Ricardo Magalhães](https://github.com/summer9604)
+- [Sara Correia](https://github.com/saracorreia07)
+- [Eduardo Zacarias](https://github.com/EduardoZacarias)
+- [Vitor Correia](https://github.com/Vitorhac)
+- [Jusué Almeida](https://github.com/Z3UX)
+- [Joseph Nunez](https://github.com/joseph-nun3z)
