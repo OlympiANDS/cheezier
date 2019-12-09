@@ -52,7 +52,7 @@ Open the http://localhost:8080/cheezier on your browser. (Firefox or Chrome reco
 
 ## Authors
 - [Sara Correia](https://github.com/saracorreia07)
-- [Eduardo Zacarias](https://github.com/EduardoZacarias)
+- [Eduardo Zacarias](https://github.com/EduardoJAZacarias)
 - [Vitor Correia](https://github.com/Vitorhac)
 - [Josué Almeida](https://github.com/Z3UX)
 - [Joseph Nunez](https://github.com/joseph-nun3z)
