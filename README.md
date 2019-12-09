@@ -54,5 +54,5 @@ Open the http://localhost:8080/cheezier on your browser. (Firefox or Chrome reco
 - [Sara Correia](https://github.com/saracorreia07)
 - [Eduardo Zacarias](https://github.com/EduardoZacarias)
 - [Vitor Correia](https://github.com/Vitorhac)
-- [Jusué Almeida](https://github.com/Z3UX)
+- [Josué Almeida](https://github.com/Z3UX)
 - [Joseph Nunez](https://github.com/joseph-nun3z)
