@@ -1,4 +1,4 @@
-![logo](/Users/codecadet/Documents/hackathon/client/img/bg-masthead.jpg?raw=true "logo")
+![alt text](/Users/codecadet/Documents/hackathon/client/img/bg-masthead.jpg)
 
 #
 This project was developed by a team of five people in a 24-hour `hackathon` project, for the third and last round of group projects @ <Academia de Código_>'s bootcamp#29, taking place by the end of the 13th week of code learning.
@@ -11,7 +11,7 @@ We divided the project into six four-hour sprints.
 
 
 ## Demo
-![demo](/Users/codecadet/Documents/hackathon/client/resources/6fnbu-u80fj.gif?raw=true "demo")
+![alt text](/Users/codecadet/Documents/hackathon/client/resources/6fnbu-u80fj.gif)
 
 
 ## Paradigm
