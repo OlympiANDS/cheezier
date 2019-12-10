@@ -1,12 +1,3 @@
-/* css file for uber project */
-/* Style the form - display items horizontally */
-  
-  /* Add some margins for each label */
-  
-  /* Style the input fields */
-  
-
-/* DAQUI PARA BAIXO ESTÁ TESTADO E A FUNCIONAR */
 body {
 	width: 100%;
 	height: 100%;
@@ -105,15 +96,8 @@ h1 {
   padding: 10px;
   margin: 1px;
   background-color: #EDC21C;
-  width: 85vw; /* JOSUÉ -> PARA CENTRAR O BOTÃO */
+  width: 85vw;
   box-sizing: border-box;
   border: 1px solid #d3d3d3;
   border-radius: 2px;
 }
-/* Infowindow */
-
-/* css snagged from http://jsfiddle.net/doktormolle/k57qojq7/ to get me started for styling the infowindow */
-      /** set here the width **/
-/** set here the desired background-color **/
-/* This gets rid of the shadow of the triangle under the infowindow */
-/* Little triangle pieces under the main infowindow */

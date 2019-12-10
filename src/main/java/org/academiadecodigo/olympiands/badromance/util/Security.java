@@ -4,10 +4,18 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * A security implementation for password security
+ */
 public class Security {
 
     private final static String ALGORITHM = "SHA";
 
+    /**
+     * A hashcode generator for passwords
+     * @param message password to be encrypted
+     * @return encrypted password
+     */
     public static String getHash(String message){
         try {
             MessageDigest md = MessageDigest.getInstance(ALGORITHM);
