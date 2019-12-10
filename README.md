@@ -1,7 +1,7 @@
 ![](client/img/bg-masthead.jpg)
 
 #
-This project was developed by a team of five people in a 24-hour `hackathon` project, for the third and last round of group projects @ <Academia de Código_>'s #34_VIMDiesels && #31_stringrays, taking place by the end of the 13th week of code learning.
+This project was developed by a team of five people in a 24-hour `hackathon` project, for the fourth group of projects @ <Academia de Código_>'s #34_VIMDiesels && #31_stringrays, taking place by the end of the 13th week of code learning.
 
 ## The project idea
 The theme of our project was randomly picked from a selection of songs. The song we ended up with was "Bad Romance", by Lady Gaga, which is about bad relationships. Although the song has a pretty heavy meaning, we decided to give it a twist and go about it the funniest way possible, in order to portray the mood we wanted to keep through the hackathon, and to give the world more reasons to laugh. We ended up creating an app that allows people to order a singing telegram on the go, kind of like those apps that bring food to our houses...But instead, we deliver live corky musical performances to help repair relationships in critical situations.
